@@ -4,12 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insert App Here</title>
-    <script src="js/render.class.js" async></script>
     <link rel="stylesheet" href="css/vendor/jquery.mobile-1.4.5.min.css"/>
     <script src="js/vendor/jquery-3.4.1.min.js"></script>
-    <script src="js/vendor/jquery-1.11.1.min.js"></script>
+    <script src="js/vendor/jquery-1.11.1.min.js"></script>    
     <script src="js/vendor/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/main.js" async></script>
 </head>
 <body>
+    <div data-role="page" id="home">
+        Home
+    </div>
+    <div data-role="page" id="camera">
+        Camera
+    </div>
+    <div data-role="page" id="setting">
+        Setting
+    </div>
+    <div data-role="footer" data-position="fixed" data-theme="a">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" class="ui-btn-active">Home</a></li>
+                <li><a href="#camera" class="ui-btn">Camera</a></li>
+                <li><a href="#setting" class="ui-btn">Setting</a></li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
