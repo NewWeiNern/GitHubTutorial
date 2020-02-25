@@ -1,4 +1,3 @@
-console.log($( "[data-role='navbar']" ));
 $( "[data-role='navbar']" ).navbar();
 $( "[data-role='footer']" ).toolbar();
 
