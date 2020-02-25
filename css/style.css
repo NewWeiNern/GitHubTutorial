@@ -1,0 +1,68 @@
+#scan{
+    background: red;
+}
+
+.custom-nav{
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+}
+.custom-nav li{
+    position: relative;
+}
+.custom-nav a, .custom-nav li, .custom-nav, .ui-footer{
+    background-color: transparent !important;
+    -webkit-box-shadow: none;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    border-color : transparent !important;
+    border:0 !important;
+    height: 10vh;
+}
+.custom-nav a::before{
+    background-size: cover;
+    content: "";
+    width: 35px;
+    height: 35px;
+    display: block;
+    margin: auto;
+    margin-bottom: 5px;
+}
+.custom-nav li a{
+    transition: all .5s, background-color 1ms;
+    padding: 10px 0 20px 0 !important;
+}
+.custom-nav a[href="#profile"]::before{
+    background-image : url(nav-con/person.svg);
+}
+.custom-nav a[href="#profile"].nav-active::before{
+    background-image : url(nav-con/person-white.svg);
+}
+.custom-nav a[href="#location"]::before{
+    background-image : url(nav-con/location.svg);
+}
+.custom-nav a[href="#location"].nav-active::before{
+    background-image : url(nav-con/location-white.svg);
+
+}
+.custom-nav a[href="#scan"]::before{
+    background-image : url(nav-con/qr-code.svg);
+}
+.custom-nav a[href="#scan"].nav-active::before{
+    background-image : url(nav-con/qr-code-white.svg);
+}
+.custom-nav .nav-active{
+    color: rgba(255,255,255,.7) !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 10vh;
+    margin-top: -20px !important;
+    padding-top: 20px !important;
+    border-top-left-radius: 30px;
+    background-color: #37bd6b !important;
+}
+.ui-footer{
+    border-top-left-radius: 30px;
+    background-color: white !important;
+}

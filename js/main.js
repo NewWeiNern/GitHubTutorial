@@ -1,8 +1,12 @@
+$(document).ready(function(){
+    $("a[href='" + window.location.hash + "'").addClass("nav-active");
+});
+
 $( "[data-role='navbar']" ).navbar();
 $( "[data-role='footer']" ).toolbar();
 
 $( document ).on( "pagecontainerchange", function() {
-    var current = $( ".ui-page-active" ).prop("id");   
+    var current = $( ".ui-page-active" ).prop("id"); 
     $( "[data-role='navbar'] a.ui-btn-active" ).removeClass( "ui-btn-active" );
     $( "[data-role='navbar'] a" ).each(function() {
         var href = $( this ).prop("href");
@@ -11,5 +15,8 @@ $( document ).on( "pagecontainerchange", function() {
         }
     });
 });
-    
-    
+
+$(".ui-footer a").click(function(e){
+        $(".nav-active").removeClass("nav-active");
+        $(this).addClass("nav-active");
+});

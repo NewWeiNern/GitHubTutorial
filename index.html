@@ -9,26 +9,30 @@
     <script src="js/vendor/jquery-1.11.1.min.js"></script>    
     <script src="js/vendor/jquery.mobile-1.4.5.min.js"></script>
     <script src="js/main.js" async></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet"/>
 </head>
 <body>
-    <div data-role="page" id="home">
-        Home
+    <div data-role="page" id="profile">
+        Profile
     </div>
-    <div data-role="page" id="camera">
-        Camera
+    <div data-role="page" id="location">
+        Location
         
     </div>
-    <div data-role="page" id="setting">
-        Setting
+    <div data-role="page" id="scan">
+        Scan Code
     </div>
-    <div data-role="footer" data-position="fixed" data-theme="a">
-        <div data-role="navbar">
+    <div data-role="footer" data-position="fixed" data-theme="a" style="display: block;">
+        <div data-role="navbar" class="custom-nav">
             <ul>
-                <li><a href="#home" class="ui-btn-active">Home</a></li>
-                <li><a href="#camera" class="ui-btn">Camera</a></li>
-                <li><a href="#setting" class="ui-btn">Setting</a></li>
+                <li><a href="#profile" class="ui-btn-active">Profile</a></li>
+                <li><a href="#location" class="ui-btn">Location</a></li>
+                <li><a href="#scan" class="ui-btn">Scan Code</a></li>
             </ul>
         </div>
     </div>
 </body>
 </html>
+
+<!-- 30 px navbar -->
