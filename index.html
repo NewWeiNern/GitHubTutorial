@@ -2,37 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insert App Here</title>
-    <link rel="stylesheet" href="css/vendor/jquery.mobile-1.4.5.min.css"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="transparent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CompostLah</title>
     <script src="js/vendor/jquery-3.4.1.min.js"></script>
-    <script src="js/vendor/jquery-1.11.1.min.js"></script>    
-    <script src="js/vendor/jquery.mobile-1.4.5.min.js"></script>
     <script src="js/main.js" async></script>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div data-role="page" id="profile">
-        Profile
-    </div>
-    <div data-role="page" id="location">
-        Location
-        
-    </div>
-    <div data-role="page" id="scan">
-        Scan Code
-    </div>
-    <div data-role="footer" data-position="fixed" data-theme="a" style="display: block;">
-        <div data-role="navbar" class="custom-nav">
-            <ul>
-                <li><a href="#profile" class="ui-btn-active">Profile</a></li>
-                <li><a href="#location" class="ui-btn">Location</a></li>
-                <li><a href="#scan" class="ui-btn">Scan Code</a></li>
-            </ul>
+    <div class="page-container">
+        <div class="page" id="profile">
+            Profile
         </div>
+        <div class="page" id="location">
+            Location
+        </div>
+        <div class="page" id="scan">
+            <video id="cam_vid"></video>
+        </div>
+    </div>
+    <div class="navbar">
+        <ul>
+            <li>
+                <a href="#profile">Profile</a>
+            </li>
+            <li>
+                <a href="#location">Location</a>
+            </li>
+            <li>
+                <div class="highlight">
+                    <a href="#scan" class="highlight">Scan QR</a>
+                </div>
+            </li>
+        </ul>
     </div>
 </body>
 </html>
-
-<!-- 30 px navbar -->

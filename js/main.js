@@ -1,22 +1,10 @@
-$(document).ready(function(){
-    $("a[href='" + window.location.hash + "'").addClass("nav-active");
-});
+$(".page" + window.location.hash).addClass("page-active");
+$("a[href='" + (window.location.hash == "" ? "#profile" : window.location.hash) + "']").addClass("nav-active");
 
-$( "[data-role='navbar']" ).navbar();
-$( "[data-role='footer']" ).toolbar();
-
-$( document ).on( "pagecontainerchange", function() {
-    var current = $( ".ui-page-active" ).prop("id"); 
-    $( "[data-role='navbar'] a.ui-btn-active" ).removeClass( "ui-btn-active" );
-    $( "[data-role='navbar'] a" ).each(function() {
-        var href = $( this ).prop("href");
-        if ( href.indexOf(current, href.length - current.length) !== -1 ) {
-            $( this ).addClass( "ui-btn-active" );
-        }
-    });
-});
-
-$(".ui-footer a").click(function(e){
-        $(".nav-active").removeClass("nav-active");
-        $(this).addClass("nav-active");
+$(".navbar li a").click(function(){
+    let current = $(this).attr("href");
+    $(".page.page-active").removeClass("page-active");
+    $(".page" + current).addClass("page-active");
+    $(".nav-active").removeClass("nav-active");
+    $(this).addClass("nav-active");
 });

@@ -1,68 +1,92 @@
-#scan{
-    background: red;
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
 }
-
-.custom-nav{
-    font-family: 'Lato', sans-serif;
-    font-weight: 100;
+.page-container{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
-.custom-nav li{
-    position: relative;
+.page{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    display: none;
 }
-.custom-nav a, .custom-nav li, .custom-nav, .ui-footer{
-    background-color: transparent !important;
-    -webkit-box-shadow: none;
-    box-shadow: none !important;
-    text-shadow: none !important;
-    border-color : transparent !important;
-    border:0 !important;
-    height: 10vh;
-}
-.custom-nav a::before{
-    background-size: cover;
-    content: "";
-    width: 35px;
-    height: 35px;
+.page-active{
     display: block;
-    margin: auto;
-    margin-bottom: 5px;
 }
-.custom-nav li a{
-    transition: all .5s, background-color 1ms;
-    padding: 10px 0 20px 0 !important;
+#profile{
+    background-color: greenyellow;
 }
-.custom-nav a[href="#profile"]::before{
-    background-image : url(nav-con/person.svg);
+#location{
+    background-color: red;
 }
-.custom-nav a[href="#profile"].nav-active::before{
-    background-image : url(nav-con/person-white.svg);
+#scan{
+    background-color: rgb(134, 134, 196);
 }
-.custom-nav a[href="#location"]::before{
-    background-image : url(nav-con/location.svg);
+.navbar{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: white;
+    border-top-left-radius: 30px;
 }
-.custom-nav a[href="#location"].nav-active::before{
-    background-image : url(nav-con/location-white.svg);
-
+.navbar ul{
+    display: flex;
+    list-style-type: none;
 }
-.custom-nav a[href="#scan"]::before{
-    background-image : url(nav-con/qr-code.svg);
+.navbar ul li{
+    height: inherit;
+    position: relative;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    text-align: center;
 }
-.custom-nav a[href="#scan"].nav-active::before{
-    background-image : url(nav-con/qr-code-white.svg);
-}
-.custom-nav .nav-active{
-    color: rgba(255,255,255,.7) !important;
+.navbar .highlight{
+    color: #9bdeb5;
+    border-top-left-radius: 30px;
+    background-color: #37bd6b;
     position: absolute;
     left: 0;
-    top: 0;
     right: 0;
-    height: 10vh;
-    margin-top: -20px !important;
-    padding-top: 20px !important;
-    border-top-left-radius: 30px;
-    background-color: #37bd6b !important;
+    bottom: 0;
+    height: 115%;
+    padding: 20px 0 5px 0;
 }
-.ui-footer{
-    border-top-left-radius: 30px;
-    background-color: white !important;
+.navbar a{
+    font-size: .8em;
+    color: #333333;
+    text-decoration: none;
 }
+.navbar a::before{
+    content: "";
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+    margin: auto;
+    margin-bottom: 5px;
+    background-position: center;
+}
+.navbar a.nav-active:not(.highlight),.navbar a.nav-active:not(.highlight)::before{
+    opacity: .6;
+}
+.navbar a.highlight::before{
+    width: 40px;
+    height: 40px;
+}
+.navbar a[href="#profile"]::before{background-image: url(nav-con/person.svg);}
+.navbar a[href="#location"]::before{background-image: url(nav-con/location.svg);}
+.navbar a[href="#scan"]::before{background-image: url(nav-con/qr-code-white.svg);}
