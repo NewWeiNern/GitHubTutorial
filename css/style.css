@@ -4,6 +4,13 @@
     padding: 0;
     font-family: "Lato", sans-serif;
 }
+.right{
+    animation: right forwards 1s;
+}
+@keyframes right{
+    from{left : 100%}
+    to{left: 0;}
+}
 .page-container{
     width: 100%;
     height: 100vh;
@@ -12,8 +19,10 @@
     bottom: 0;
     left: 0;
     right: 0;
+    overflow: hidden;
 }
 .page{
+    transition: all .5s;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -22,6 +31,7 @@
     display: none;
 }
 .page-active{
+    z-index: 3;
     display: block;
 }
 #profile{
@@ -31,9 +41,12 @@
     background-color: red;
 }
 #scan{
-    background-color: rgb(134, 134, 196);
+    background-color: rgb(184, 113, 113);
+    display: none;
 }
 .navbar{
+    z-index: 9999;
+    transform: translateZ(9999px);
     position: fixed;
     bottom: 0;
     left: 0;
@@ -74,7 +87,7 @@
     color: #333333;
     text-decoration: none;
 }
-.navbar a::before{
+.navbar a::before, .navbar label::before{
     content: "";
     display: block;
     width: 35px;
@@ -93,4 +106,7 @@
 }
 .navbar a[href="#profile"]::before{background-image: url(nav-con/person.svg);}
 .navbar a[href="#location"]::before{background-image: url(nav-con/location.svg);}
-.navbar a[href="#scan"]::before{background-image: url(nav-con/qr-code-white.svg);}
+.navbar label[for="image-input"]::before{background-image: url(nav-con/qr-code-white.svg);}
+.navbar #image-input{
+    display: none;
+}

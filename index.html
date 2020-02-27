@@ -7,11 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>CompostLah</title>
     <script src="js/vendor/jquery-3.4.1.min.js"></script>
-    <script src="js/vendor/adapter.min.js"></script>
-    <script src="js/vendor/instascan.js"></script>
-    <script src="js/vendor/QrCodeScanner.js"></script>
+    <script src="js/vendor/qr_packed.js"></script>
+    <script src="js/scanner.js"></script>
     <script src="js/main.js" async></script>
-    <script src="js/cam_view.js" async></script>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -24,8 +22,7 @@
             Location
         </div>
         <div class="page" id="scan">
-            <select id="select"></select>
-            <video id="cam_vid" playsinline autoplay muted loop></video>
+            
         </div>
     </div>
     <div class="navbar">
@@ -38,7 +35,10 @@
             </li>
             <li>
                 <div class="highlight">
-                    <a href="#scan" class="highlight">Scan QR</a>
+                    <form>
+                        <input type="file" name="image-input" id="image-input" accept="image/*" capture="environment"/>
+                        <label for="image-input">Scan QR</label>
+                    </form>
                 </div>
             </li>
         </ul>
