@@ -10,7 +10,16 @@ function scanner(e){
             alert("QR Code is not found.");
         }
         else{
-            alert(res);
+
+            web_data.previous = web_data.current;
+            window.location.hash = web_data.current = "#scan";
+            
+            $(".page-active").removeClass("page-active");
+
+            $("#scan")
+            .addClass("page-active")
+            .css("top", "100%")
+            .animate({"top" : "0%"});
         }
     }
     reader.readAsDataURL(file);
