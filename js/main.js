@@ -8,3 +8,33 @@ $(".navbar li a").click(function(){
     $(".nav-active").removeClass("nav-active");
     $(this).addClass("nav-active");
 });
+
+// const vid = {
+//     element : document.querySelector("#cam_vid"),
+//     options : initVideoObjectOptions("cam_vid"),
+//     id : 0,
+//     init(){
+//         console.log(this.options);
+//         initScanner(this.options);
+//         initAvaliableCameras($("#select"), (e)=>{
+//             alert(e);
+//             this.id =0;
+//         })
+//         initCamera(this.id);
+//         scanStart(function(data){
+//             alert(data);
+//         });
+
+//         this.element.addEventListener("play", function(){
+//             var $this = this;
+
+//             (function loop(){
+//                 if(!$this.paused && !$this.ended){
+//                     setTimeout(loop, 1000/30);
+//                 }
+//             })();
+//         }, 0);
+//     }
+// };
+
+// vid.init();
