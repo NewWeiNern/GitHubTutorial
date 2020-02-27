@@ -1,11 +1,19 @@
 const web_data = {
     previous : null,
-    current : (window.location.hash || "#profile")
+    current : (window.location.hash || "#profile"),
+    intro : localStorage.getItem("intro") || false
 };
 
-
+if(!web_data.intro){
+    web_data.current = "#learn-more";
+    $(".navbar").css("display", "none");
+}
+if(web_data.intro && !web_data.login){
+    web_data.current = "#login";
+    $(".navbar").css("display", "none");
+}
 $(`${web_data.current}.page`).addClass("page-active");
-$(`a[href="${web_data.current}"`).addClass("nav-active");
+$(`a[href="${web_data.current}"]`).addClass("nav-active");
 
 $(".navbar li a").click(function(e){
     e.preventDefault();

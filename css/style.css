@@ -4,6 +4,9 @@
     padding: 0;
     font-family: "Lato", sans-serif;
 }
+p{
+    font-family: "Raleway", sans-serif;
+}
 .page-container{
     width: 100%;
     height: 100vh;
@@ -22,6 +25,11 @@
 .page-active{
     z-index: 3 !important;
     display: block;
+}
+#onboarding, #learn-more{
+    background-color: white;
+    /* z-index: 99999 !important;
+    transform: translateZ(99999px); */
 }
 #profile{
     background-color: greenyellow;
@@ -52,8 +60,6 @@
     height: inherit;
     position: relative;
     width: 100%;
-    padding-top: 10px;
-    padding-bottom: 20px;
     text-align: center;
     display: flex;
     width: 100%;
@@ -67,13 +73,17 @@
     left: 0;
     right: 0;
     bottom: 0;
-    height: 115%;
+    height: 120%;
     padding: 20px 0 5px 0;
+    display: flex;
+    justify-content: center;
 }
 .navbar a{
     width: 100%;
     font-size: .8em;
     color: #333333;
+    padding-top: 10px;
+    padding-bottom: 20px;
     text-decoration: none;
 }
 .navbar a::before, .navbar label::before{
