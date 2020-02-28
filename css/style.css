@@ -4,6 +4,18 @@
     padding: 0;
     font-family: "Lato", sans-serif;
 }
+input[type="button"]{
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    padding: 15px 45px;
+    border-radius: 30px;
+    background-color: #37BD6B;
+    color: white;
+    font-weight: 400;
+    cursor: pointer;
+    outline: none;
+}
 p{
     font-family: "Raleway", sans-serif;
 }
@@ -36,6 +48,9 @@ p{
 }
 #location{
     background-color: red;
+}
+#login{
+    background-color: white;
 }
 #scan{
     z-index: -1;
@@ -108,4 +123,97 @@ p{
 .navbar label[for="image-input"]::before{background-image: url(nav-con/qr-code-white.svg);}
 .navbar #image-input{
     display: none;
+}
+
+#learn-more, #onboarding{
+    padding: 10vw;
+    padding-top: 20vh;
+}
+#learn-more{
+    background-image: url(../image/bg/intro.png);
+}
+#learn-more h4{
+    font-size: 1.4em;
+    font-weight: 500;
+}
+#learn-more p{
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+#learn-more input[type="button"]{
+    font-size: 1em;
+}
+#learn-more,
+#onboarding{
+    width: 100%;
+}
+#onboarding{
+    background-image: url(../image/bg/Onboarding.png);
+}
+#onboarding .content{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: inherit;
+    padding-top: 25vh;
+    display: none;
+}
+#onboarding .content.active{
+    display: block;
+}
+#onboarding .content img{
+    width: 30vw;
+    height: 30vw;
+    display:block;
+    margin: auto;
+    margin-bottom: 20px;
+}
+#onboarding .content h1{
+    text-align: center;
+    color: #6b6b6b;
+}
+#onboarding .content p.title{
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 1.2em;
+    text-align: center;
+    color: #6b6b6b;
+}
+#onboarding .content p.title span{
+    color: #37BD6B;
+}
+#onboarding .content p.desc{
+    width: 65%;
+    margin: auto;
+    text-align: center;
+}
+#onboarding .dot-indicator{
+    position: absolute;
+    bottom: 30vh;
+    left: 0;
+    right: 0;
+    display: flex;
+    width: 30%;
+    margin: auto;
+    justify-content: space-evenly;
+}
+#onboarding .dot-indicator span{
+    border-radius: 100%;
+    background-color: #C4C4C4;
+    width: 7px;
+    height: 7px;
+    display: block;
+}
+#onboarding .dot-indicator span.active{
+    background-color: #7a7a7a;
+}
+#onboarding img#sp-btn{
+    position: absolute;
+    bottom: -100%;
+    right: 0;
+    width: 40%;
+    transition: bottom .6s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }

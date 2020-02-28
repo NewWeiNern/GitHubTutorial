@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>CompostLah</title>
     <script src="js/vendor/jquery-3.4.1.min.js"></script>
+    <script src="js/vendor/hammer.min.js"></script>
     <script src="js/vendor/qr_packed.js"></script>
+    <script src="js/swipe.js"></script>
     <script src="js/scanner.js"></script>
     <script src="js/main.js" async></script>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
@@ -17,29 +19,43 @@
     <div class="page-container">
         <div class="page" id="learn-more">
             <h4>Welcome to</h4>
-            <h1>CompostLah</h1>
+            <img src="image/wordMark.svg">
             <p>Turn some of your food waste into a greener future for Singapore!</p>
             <input type="button" value="Learn More">
         </div>
         <div class="page" id="onboarding">
-            <div id="msg-1" class="content">
-                <img src="" alt="Location">
+            <div id="msg-1" class="content active">
+                <img src="image/locLarge.svg" alt="Location">
                 <h1>CompostLah</h1>
-                <p>Bin <span>Location</span></p>
-                <p>Map feature that shows you the available bins around you</p>
+                <p class="title">Bin <span>Location</span></p>
+                <p class="desc">Map feature that shows you the available bins around you</p>
             </div>
             <div id="msg-2" class="content">
-                <img src="" alt="Rewards">
+                <img src="image/rewardLarge.svg" alt="Rewards">
                 <h1>Rewards</h1>
-                <p>Through <span>Contributions</span></p>
-                <p>Get rewarded for helping and lead Singapore into a greener future</p>
+                <p class="title">Through <span>Contributions</span></p>
+                <p class="desc">Get rewarded for helping and lead Singapore into a greener future</p>
             </div>
             <div id="msg-3" class="content">
-                <img src="" alt="QR">
+                <img src="image/qrLarge.svg" alt="QR">
                 <h1>QR Code</h1>
-                <p>Scan to <span>Update</span></p>
-                <p>Scan the QR Code on the bin to unlock it then deposit your food waste</p>
+                <p class="title">Scan to <span>Update</span></p>
+                <p class="desc">Scan the QR Code on the bin to unlock it then deposit your food waste</p>
             </div>
+            <div class="dot-indicator">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+            </div>
+            <img src="image/button.svg" id="sp-btn"/>
+        </div>
+        <div class="page" id="login">
+            <img src="image/logo-w-txt.svg" alt="logo">
+            <form action="login.php">
+                <input type="email" name="email" placeholder="Email Address"/>
+                <input type="password" name="password"/>
+                
+            </form>
         </div>
         <div class="page" id="profile">
             Profile

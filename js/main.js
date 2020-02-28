@@ -4,6 +4,7 @@ const web_data = {
     intro : localStorage.getItem("intro") || false
 };
 
+
 if(!web_data.intro){
     web_data.current = "#learn-more";
     $(".navbar").css("display", "none");
@@ -14,7 +15,7 @@ if(web_data.intro && !web_data.login){
 }
 $(`${web_data.current}.page`).addClass("page-active");
 $(`a[href="${web_data.current}"]`).addClass("nav-active");
-
+swipe($(".page#onboarding"));
 $(".navbar li a").click(function(e){
     e.preventDefault();
     // set to the correct page
@@ -53,5 +54,33 @@ $(".navbar li a").click(function(e){
     $(this).addClass("nav-active");
 
 });
+$("#learn-more input[type='button']").click(function(){
+    $(this.parentElement).css({left : 0, width : "103%"}).animate({left : "-100%"});
+    $(".page#onboarding").css({
+        display : "block",
+        zIndex : 9,
+        left : "100%"
+    }).animate({left : "0%"}, ()=>{
+        $(".page.page-active").removeClass("page-active");
+        $(".page#onboarding").addClass("page-active");    
+    });
+});
+$("#sp-btn").click(function(){
+    localStorage.setItem("intro", true);
+    $(".page#onboarding").css({
+        left : "0"
+    }).animate({left : "-100%"}, ()=>{
+        $(".page.page-active").removeClass("page-active");
+        $(".page#login").addClass("page-active");
+    });
 
+    $(".page#login").css({
+        left : "100%",
+        display :"block",
+        zIndex : 3
+    }).animate({left : "0%"}, ()=>{
+        $(".page.page-active").removeClass("page-active");
+        $(".page#login").addClass("page-active");
+    });
+});
 $("#image-input").on("change", scanner);
