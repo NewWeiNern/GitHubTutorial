@@ -1,0 +1,444 @@
+:root{
+    --c1 : #37BD6B;
+    --c2 : #6b6b6b;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway", sans-serif;
+}
+p{font-size: 1.2em;}
+.enable{bottom: 0% !important;}
+.disable{bottom: -100% !important;}
+.gr{color: var(--c1);}
+.raleway{font-family: "Raleway", sans-serif;}
+h1,h2,h3,h4,h5,h6,.lato{
+    font-family: "Lato", sans-serif;
+}
+input[type="button"],input[type="submit"]{
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    padding: 15px 45px;
+    border-radius: 30px;
+    background-color: var(--c1);
+    color: white;
+}
+input[type="text"], input[type="email"], input[type="password"]{
+    background-color: #f3f3f3;
+    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 30px;
+    outline:none;
+    padding: 20px 20px;
+}
+.page-container{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.page{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    display: none;
+}
+.page.active{
+    z-index: 3 !important;
+    display: block;
+}
+.nav{
+    /* transition: bottom .6s cubic-bezier(0.6, -0.28, 0.735, 0.045); bounce effect*/
+    transition: bottom .6s cubic-bezier(0.22, 0.61, 0.36, 1);
+    z-index: 9999;
+    transform: translateZ(9999px);
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: white;
+    border-top-left-radius: 30px;
+}
+.nav ul{
+    display: flex;
+    list-style-type: none;
+}
+.nav ul li{
+    height: inherit;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.nav .cam-cont{
+    color: #9bdeb5;
+    border-top-left-radius: 30px;
+    background-color: var(--c1);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 120%;
+    /* padding: 20px 0 5px 0; */
+    display: flex;
+    justify-content: center;
+}
+.nav form{width: 100%;}
+.nav label{width: inherit; padding: 20px 0 5px 0; display: block;}
+.nav a{
+    width: 100%;
+    font-size: .8em;
+    color: #333333;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-decoration: none;
+}
+.nav a::before, .nav label::before{
+    content: "";
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+    margin: auto;
+    margin-bottom: 5px;
+    background-position: center;
+}
+.nav a.active{
+    opacity: .6;
+}
+.nav a[href="#profile"]::before{background-image: url(nav/person.svg);}
+.nav a[href="#location"]::before{background-image: url(nav/location.svg);}
+.nav label::before{background-image: url(nav/qr-code-white.svg);}
+.nav input{
+    display: none;
+    height: 0px;
+}
+/* Background Image */
+#intro.page{background-image: url(../image/bg/intro.png);}
+#onboard.page{background-image: url(../image/bg/onboard.png);}
+#login.page,#register.page{background-image: url(../image/bg/signing.png);}
+#profile.page{
+    background-color: #f3f3f3;
+}
+/* Misc - most elements that have related stuff will be here */
+
+#intro.page,
+#onboard.page,
+#login.page,
+#register.page{
+    padding: 0 10vw;
+}
+
+/* intro page */
+
+#intro.page{
+    padding-top: 15vh;
+}
+#intro.page img{
+    margin-top: 10px;
+    width: 100%;
+}
+#intro.page input{
+    margin-top: 20px;
+}
+
+/* onboard page */
+
+#onboard.page{
+    padding-top: 20vh;
+    text-align: center;
+}
+#onboard.page .content{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    padding: inherit;
+    display: none;
+}
+#onboard.page .content.active{
+    display: block;
+}
+#onboard.page img:not(.special_btn){
+    width: 30vw;
+    height: 30vw;
+    margin: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+#onboard.page h4{
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+#onboard.page p{
+    width: 65%;
+    font-size: 1em;
+    margin: auto;
+}
+#onboard.page .special_btn{
+    position: absolute;
+    bottom: -100%;
+    right: 0;
+    width: 40%;
+    transition: bottom .6s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+#onboard.page .dots-cont{
+    position: absolute;
+    bottom: 30vh;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+}
+#onboard.page .dots-cont span{
+    width: 7px;
+    height: 7px;
+    background-color: #c4c4c4;
+    display: block;
+    border-radius: 100%;
+}
+#onboard.page .dots-cont span.active{background-color: #7a7a7a;}
+
+/* login page */
+#login.page{
+    padding: 0;
+    padding-top: 6vh;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+#login.page > *{padding: 0 10vw;}
+#login.page img{
+    padding: 0;
+    width: 45%;
+    margin: 0 auto;
+    display: block;
+
+}
+#login.page input{
+    width: 100%;
+}
+#login.page input:first-child{
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+#login.page .forgot-pass{
+    text-align: right;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+#login.page .no-acc{
+    margin: 40px 0;
+    margin-bottom: 40px;
+}
+#login.page .no-acc > a{
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+#login.page .login-alt{
+    background-color: #f3f3f3;
+    flex-grow: 1;
+}
+#login.page .login-alt h3{
+    padding: 30px 0 20px;
+    text-align: center;
+}
+#login.page .login-alt .icon-cont{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+#login.page .login-alt .icon-cont > div{
+    width: 50px;
+    height: 50px;
+}
+#login.page .fb{background-image: url(../image/svg/facebookIcon.svg);}
+#login.page .gg{background-image: url(../image/svg/googleIcon.svg);}
+#login.page .sp{background-image: url(../image/svg/SingPassIcon.svg);}
+
+/* register page */
+
+#register.page{
+    padding-top: 10vh;
+    overflow: auto;
+}
+#register.page img{
+    margin: auto;
+    margin-bottom: 50px;
+    display: block;
+}
+#register.page input:not([type="button"]){
+    margin-bottom:20px;
+    width: 100%;
+}
+#register.page input[type="submit"]{
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+#register.page h3{
+    margin-bottom: 30px;
+}
+#register.page h3 > a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+/* profile page */
+#profile.page{
+    overflow: auto;
+    padding-bottom: 105px;
+}
+#profile.page .header{
+    background-color: white;
+    padding: 5vh 10vw 0 5vh;
+    border-bottom-right-radius: 60px;
+}
+#profile.page .header .user_ico{
+    margin-bottom: 20px;
+}
+#profile.page .header .greet-msg h1{
+    font-size: 3em;
+    padding-bottom: 2vh;
+}
+#profile.page .data{
+    padding: 5vh 11vw;
+}
+#profile.page .data h3{
+    text-align: center;
+    margin-bottom: 20px;
+}
+#profile.page .total_weighed, #profile.page .reward_bar{
+    display: flex;
+    justify-content: space-evenly;
+}
+#profile.page .total_weighed{
+    margin-bottom: 40px;
+}
+#profile.page .total_weighed > div{
+    width: 100%;
+    text-align: center;
+}
+#profile.page .total_weighed h2{
+    font-size: 2.5em;
+}
+#profile.page .reward_bar{
+    display: flex;
+}
+#profile.page .prg_bar{
+    position: relative;
+}
+#profile.page .prg_bar img[alt="bg_total"]{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    clip-path: inset(100% 0 0 0);
+}
+#profile.page .nxt_reward{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#profile.page .nxt_reward h2{
+    font-size: 2.5em;
+}
+#profile.page .rewards::before{
+    content: "Rewards";
+    font-weight: 600;
+    text-align: center;
+    display: block;
+    font-family: "Lato", sans-serif;
+    margin-bottom: 30px;
+}
+#profile.page .rewards .reward-cont{
+    background-color: white;
+    margin-bottom: 10px;
+    box-shadow: -1px 3px 5px 0px #00000040;
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 30px;
+    /* padding: 10px 50px; */
+    display: flex;
+}
+#profile.page .rewards .reward-cont img{
+    width: 40px;
+    margin: 30px 20px 30px 40px;
+}
+#profile.page .rewards .reward-cont .info{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    flex: 1;
+}
+#profile.page .rewards .reward-cont .info p{
+    font-size: small;
+}
+#profile.page .reward-cont .info p span{
+    color: var(--c1);
+    font-weight: bold;
+}
+#profile.page .reward-cont div:last-child{
+    color: white;
+    background: gray;
+    height: 100%;
+    justify-self: flex-end;
+    align-self: flex-end;
+    display: flex;
+    padding: 8px 15px 4px 20px;
+    border-top-left-radius: 20px;
+}
+#profile.page .reward-cont div:last-child::before{
+    content: url(../image/svg/bag.svg);
+    display: block;
+    margin-right: 10px;
+}
+
+/* animation */
+.left_out{
+    animation : left_out .4s linear forwards;
+}
+.left_in{
+    animation : left_in .4s linear forwards;
+}
+.right_out{
+    animation : right_out .4s linear forwards;
+}
+.right_in{
+    animation : right_in .4s linear forwards;
+}
+@keyframes left_out{
+    from{left : 0%}
+    to{left : -100%}
+}
+@keyframes left_in{
+    from{left : 100%}
+    to{left : 0%}
+}
+@keyframes right_out{
+    from{left : 0%}
+    to{left : 100%}
+}
+@keyframes right_in{
+    from{left : -100%}
+    to{left : 0%}
+}

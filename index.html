@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="transparent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CompostLah</title>
+    <script src="js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="js/vendor/qr_packed.js"></script>
+	<script src="js/vendor/hammer.min.js"></script>
+	<script src="js/page.js"></script>
+	<script src="js/swipe.js"></script>
+	<script src="js/store.js"></script>
+	<script src="js/main.js" async></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="page-container">
+        <div id="intro" class="page active">
+			<h4>Welcome to</h4>
+			<img src="image/svg/company_txt.svg" alt="company_txt"/>
+			<p>Turn some of your food waste into a greener future for Singapore!</p>
+			<input type="button" value="Learn More" data-from="#intro" data-to="#onboard">
+        </div>
+        <div id="onboard" class="page">
+            <div class="content active">
+				<img src="image/svg/location.svg" alt="Location"/>
+				<h1>CompostLah</h1>
+				<h4>Bin <span class="gr">Location</span></h4>
+				<p>Map feature that shows you the available bins around you</p>
+			</div>
+			<div class="content">
+				<img src="image/svg/reward.svg" alt="Rewards"/>
+				<h1>Rewards</h1>
+				<h4>Through <span class="gr">Contributions</span></h4>
+				<p>Get rewarded for helping and lead Singapore into a greener future</p>
+			</div>
+			<div class="content">
+				<img src="image/svg/qr.svg" alt="QR"/>
+				<h1>QR Code</h1>
+				<h4>Scan to <span class="gr">Update</span></h4>
+				<p>Scan the QR Code on the bin to unlock it then deposit your food waste</p>
+			</div>
+			<div class="dots-cont">
+				<span class="active"></span>
+				<span></span>
+				<span></span>
+			</div>
+			<img src="image/svg/special_btn.svg" alt="special_btn" class="special_btn" data-from="#onboard" data-to="#login"/>
+        </div>
+        <div id="login" class="page">
+		   <img src="image/svg/icon.svg" alt="company_icon">
+		   <form class="login-main" method="POST" action="php/login.php" data-from="#login" data-to="#profile" data-transition="left">
+			   <input type="email" name="email" id="email-login" placeholder="Email Address">
+			   <input type="password" name="pass" id="pass-login" placeholder="Password">
+			   <h3 class="gr forgot-pass">Forgot Password?</h3>
+			   <input type="submit" value="Sign In"/>
+			   <h3 class="no-acc"><a href="#register" class="gr" data-from="#login" data-to="#register">Don't have an account?</a></h3>
+		   </form>
+		   <div class="login-alt">
+			   <h3>Continue With</h3>
+			   <div class="icon-cont">
+				   <div class="fb"></div>
+				   <div class="gg"></div>
+				   <div class="sp"></div>
+				</div>
+		   </div>
+        </div>
+        <div id="register" class="page">
+			<img src="image/svg/icon.svg" alt="company_icon">
+			<form class="register-main" method="POST" action="php/register.php" data-from="#register" data-to="#profile" data-transition="left">
+				<input type="text" name="name" id="name" placeholder="First Name">
+				<input type="email" name="email" id="email-register" placeholder="Email Address">
+				<input type="password" name="pass" id="pass-register" placeholder="Password">
+				<input type="password" name="passcfm" id="passcfm" placeholder="Confirm Password">
+				<input type="submit" value="Sign Up"/>
+				<h3 class="hve-acc" ><a href="#login" class="gr" data-from="#register" data-to="#login">Already have an account?</a></h3>
+			</form> 
+        </div>
+        <div id="profile" class="page">
+			<div class="header">
+				<img src="image/svg/user_icon.svg" alt="profile_icon" class="user_ico">
+				<div class="greet-msg">
+					<h3>Hello & Welcome!</h3>
+					<h1 class="gr">Darren</h1>
+				</div>
+			</div>
+			<div class="data">
+				<h3>Contributions</h3>
+				<div class="total_weighed">
+					<div class="cur"><h2 class="gr">0.4kg</h2><p>Current</p></div>
+					<div class="total"><h2 class="gr">1.4kg</h2><p>Total</p></div>
+				</div>
+				<div class="reward_bar">
+					<div class="prg_bar">
+						<img src="image/svg/bin.svg" alt="bg_empty"/>
+						<img src="image/svg/bin.svg" alt="bg_total"/>
+					</div>
+					<div class="nxt_reward"><h2 class="gr">0.6kg</h2><p>Next Reward</p></div>
+				</div>
+			</div>
+			<div class="rewards">
+				<div class="reward-cont">
+					<img src="image/svg/reward.svg" alt="present" />
+					<div class="info">
+						<h3>$10 Cash Voucher</h3>
+						<p>Redeem from <span>NTUC</span></p>
+					</div>
+					<div>0.0kg</div>
+				</div>
+				<div class="reward-cont">
+					<img src="image/svg/reward.svg" alt="present">
+					<div class="info">
+						<h3>$20 Cash Voucher</h3>
+						<p>Redeem from <span>NTUC</span></p>
+					</div>
+					<div>0.6kg</div>
+				</div>
+				<div class="reward-cont">
+					<img src="image/svg/reward.svg" alt="present" />
+					<div class="info">
+						<h3>$30 Cash Voucher</h3>
+						<p>Redeem from <span>NTUC</span></p>
+					</div>
+					<div>2.0kg</div>
+				</div>
+				<div class="reward-cont">
+					<img src="image/svg/reward.svg" alt="present" />
+					<div class="info">
+						<h3>$40 Cash Voucher</h3>
+						<p>Redeem from <span>NTUC</span></p>
+					</div>
+					<div>3.0kg</div>
+				</div>
+				<div class="reward-cont">
+					<img src="image/svg/reward.svg" alt="present" />
+					<div class="info">
+						<h3>$50 Cash Voucher</h3>
+						<p>Redeem from <span>NTUC</span></p>
+					</div>
+					<div>4.0kg</div>
+				</div>
+			</div>
+        </div>
+        <div id="location" class="page">
+            <h3>location</h3>
+        </div>
+    </div>
+    <div class="nav">
+        <ul>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#location">Location</a></li>
+            <li>
+                <div class="cam-cont">
+                    <form>
+                        <input type="file" name="qr-img" id="qr-img">
+                        <label for="qr-img">Scan QR</label>
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
