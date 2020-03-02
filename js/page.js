@@ -34,6 +34,7 @@ class PageController{
     }
     view(from, to, dir){
         const _p = this;
+        
         return new Promise((resolve)=>{
             const removeClass = function(){
                 resolve({from : from, to : to, dir : dir, _p : _p});

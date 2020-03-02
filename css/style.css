@@ -352,7 +352,7 @@ input[type="text"], input[type="email"], input[type="password"]{
     left: 0;
     right: 0;
     width: 100%;
-    clip-path: inset(100% 0 0 0);
+    /* clip-path: inset(100% 0 0 0); */
 }
 #profile.page .nxt_reward{
     display: flex;
@@ -382,7 +382,8 @@ input[type="text"], input[type="email"], input[type="password"]{
 }
 #profile.page .rewards .reward-cont img{
     width: 40px;
-    margin: 30px 20px 30px 40px;
+    /* margin: 30px 20px 30px 40px; */
+    margin: 5vh 8vw;
 }
 #profile.page .rewards .reward-cont .info{
     display: flex;
@@ -412,7 +413,9 @@ input[type="text"], input[type="email"], input[type="password"]{
     display: block;
     margin-right: 10px;
 }
-
+#location.page{
+    background: white;
+}
 /* animation */
 .left_out{
     animation : left_out .4s linear forwards;

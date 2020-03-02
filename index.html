@@ -8,13 +8,16 @@
     <title>CompostLah</title>
     <script src="js/vendor/jquery-3.4.1.min.js"></script>
 	<script src="js/vendor/qr_packed.js"></script>
-	<script src="js/vendor/hammer.min.js"></script>
+    <script src="js/vendor/hammer.min.js"></script>
+    <script src="js/vendor/leaflet.js"></script>
 	<script src="js/page.js"></script>
 	<script src="js/swipe.js"></script>
-	<script src="js/store.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/scanner.js"></script>
 	<script src="js/main.js" async></script>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/leaflet.css">
 </head>
 <body>
     <div class="page-container">
@@ -96,7 +99,7 @@
 				<div class="reward_bar">
 					<div class="prg_bar">
 						<img src="image/svg/bin.svg" alt="bg_empty"/>
-						<img src="image/svg/bin.svg" alt="bg_total"/>
+						<img src="image/svg/bin.svg" alt="bg_total" style="clip: rect(50px, auto, auto, auto);"/>
 					</div>
 					<div class="nxt_reward"><h2 class="gr">0.6kg</h2><p>Next Reward</p></div>
 				</div>
@@ -145,17 +148,18 @@
 			</div>
         </div>
         <div id="location" class="page">
-            <h3>location</h3>
+            <h1>Nearby <span class="gr">Bins</span></h1>
+            <div class="map"></div>
         </div>
     </div>
     <div class="nav">
         <ul>
-            <li><a href="#profile">Profile</a></li>
-            <li><a href="#location">Location</a></li>
+            <li><a href="#profile" class="active" data-from="#location" data-transition="right">Profile</a></li>
+            <li><a href="#location" data-from="#profile" data-transition="left">Location</a></li>
             <li>
                 <div class="cam-cont">
                     <form>
-                        <input type="file" name="qr-img" id="qr-img">
+                        <input type="file" name="qr-img" id="qr-img" capture="environment" accept="image/*">
                         <label for="qr-img">Scan QR</label>
                     </form>
                 </div>
