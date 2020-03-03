@@ -7,6 +7,7 @@
     margin: 0;
     padding: 0;
     font-family: "Raleway", sans-serif;
+    color: #6b6b6b;
 }
 p{font-size: 1.2em;}
 .enable{bottom: 0% !important;}
@@ -24,6 +25,7 @@ input[type="button"],input[type="submit"]{
     border-radius: 30px;
     background-color: var(--c1);
     color: white;
+    font-size: 1em;
 }
 input[type="text"], input[type="email"], input[type="password"]{
     background-color: #f3f3f3;
@@ -94,7 +96,7 @@ input[type="text"], input[type="email"], input[type="password"]{
     justify-content: center;
 }
 .nav form{width: 100%;}
-.nav label{width: inherit; padding: 20px 0 5px 0; display: block;}
+.nav label{width: inherit; padding: 20px 0 5px 0; display: block; color: white;}
 .nav a{
     width: 100%;
     font-size: .8em;
@@ -114,7 +116,7 @@ input[type="text"], input[type="email"], input[type="password"]{
     background-position: center;
 }
 .nav a.active{
-    opacity: .6;
+    opacity: .7;
 }
 .nav a[href="#profile"]::before{background-image: url(nav/person.svg);}
 .nav a[href="#location"]::before{background-image: url(nav/location.svg);}
@@ -143,6 +145,9 @@ input[type="text"], input[type="email"], input[type="password"]{
 
 #intro.page{
     padding-top: 15vh;
+}
+#intro.page h4{
+    color: #6b6b6b;
 }
 #intro.page img{
     margin-top: 10px;
@@ -177,6 +182,9 @@ input[type="text"], input[type="email"], input[type="password"]{
     margin: auto;
     display: block;
     margin-bottom: 20px;
+}
+#onboard.page h1{
+    color: #6b6b6b;
 }
 #onboard.page h4{
     margin-top: 5px;
@@ -221,6 +229,9 @@ input[type="text"], input[type="email"], input[type="password"]{
     display: flex;
     flex-direction: column;
     overflow: auto;
+}
+#login.page h3{
+    font-weight: 500;
 }
 #login.page > *{padding: 0 10vw;}
 #login.page img{
@@ -294,6 +305,7 @@ input[type="text"], input[type="email"], input[type="password"]{
     margin-bottom: 40px;
 }
 #register.page h3{
+    font-weight: 500;
     margin-bottom: 30px;
 }
 #register.page h3 > a{
@@ -368,6 +380,7 @@ input[type="text"], input[type="email"], input[type="password"]{
     font-weight: 600;
     text-align: center;
     display: block;
+    font-size: 1.17em;
     font-family: "Lato", sans-serif;
     margin-bottom: 30px;
 }
@@ -419,6 +432,7 @@ input[type="text"], input[type="email"], input[type="password"]{
 #location.page h1{
     text-align: center;
     margin-top: 30px;
+    color: white;
 }
 #location.page #map{
     width: 100%;
