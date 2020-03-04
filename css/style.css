@@ -337,12 +337,14 @@ input[type="text"], input[type="email"], input[type="password"]{
     text-align: center;
     margin-bottom: 20px;
 }
+#profile.page .info-cont{
+    display: flex;
+    justify-content: space-around;
+}
 #profile.page .total_weighed, #profile.page .reward_bar{
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
-}
-#profile.page .total_weighed{
-    margin-bottom: 40px;
 }
 #profile.page .total_weighed > div{
     width: 100%;
@@ -371,6 +373,7 @@ input[type="text"], input[type="email"], input[type="password"]{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
 }
 #profile.page .nxt_reward h2{
     font-size: 2.5em;
@@ -444,7 +447,38 @@ input[type="text"], input[type="email"], input[type="password"]{
     right: 0;
     z-index: -1;
 }
-
+#redeem.page, #deposit.page{
+    background-color: white;
+    padding: 10vw;
+    padding-top: 20vh;
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+}
+#redeem.page .btn-cont{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: flex-end;
+}
+#redeem.page img{
+    width: 50%;
+    margin: auto;
+    display: block;
+    margin-bottom: 2vh;
+}
+#redeem.page h1{
+    margin-bottom: 20px;
+}
+#redeem.page input[type="button"]{
+    margin-bottom: 20px;
+}
+#redeem.page input:last-child{
+    background-color: #db6262;
+}
+.page.infront{
+    z-index: 9999999 !important;
+}
 /* animation */
 .left_out{
     animation : left_out .4s linear forwards;
@@ -457,6 +491,28 @@ input[type="text"], input[type="email"], input[type="password"]{
 }
 .right_in{
     animation : right_in .4s linear forwards;
+}
+.up_in{
+    animation : up_in .4s linear forwards;
+}
+.up_out{
+    animation : up_out .4s linear forwards;
+}
+@keyframes up_in{
+    from{
+        top: 100%;
+    }
+    to{
+        top : 0%;
+    }
+}
+@keyframes up_out{
+    from{
+        top: 0%;
+    }
+    to{
+        top : 100%;
+    }
 }
 @keyframes left_out{
     from{left : 0%}

@@ -17,7 +17,12 @@
 	<script src="js/main.js" async></script>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/leaflet.css">
+	<link rel="stylesheet" href="css/leaflet.css">
+	<!-- <script>
+
+		let store = new Store();
+		store.delete();
+	</script> -->
 </head>
 <body>
     <div class="page-container">
@@ -87,22 +92,24 @@
 				<img src="image/svg/user_icon.svg" alt="profile_icon" class="user_ico">
 				<div class="greet-msg">
 					<h3>Hello & Welcome!</h3>
-					<h1 class="gr">Darren</h1>
+					<h1 class="gr"></h1>
 				</div>
 			</div>
 			<div class="data">
 				<h3>Contributions</h3>
-				<div class="total_weighed">
-					<div class="cur"><h2 class="gr">0.4kg</h2><p>Current</p></div>
-					<div class="total"><h2 class="gr">1.4kg</h2><p>Total</p></div>
-				</div>
-				<div class="reward_bar">
-					<div class="prg_bar">
-						<img src="image/svg/bin.svg" alt="bg_empty"/>
-						<img src="image/svg/bin.svg" alt="bg_total" style="clip: rect(50px, auto, auto, auto);"/>
+				<div class="info-cont">
+					<div class="reward_bar">
+						<div class="prg_bar">
+							<img src="image/svg/bin.svg" alt="bg_empty"/>
+							<img src="image/svg/bin.svg" alt="bg_total" style="clip: rect(50px, auto, auto, auto);"/>
+						</div>
 					</div>
-					<div class="nxt_reward"><h2 class="gr">0.6kg</h2><p>Next Reward</p></div>
+					<div class="total_weighed">
+						<div class="nxt_reward"><h2 class="gr">0.0kg</h2><p>Next Reward</p></div>
+						<div class="cur"><h2 class="gr">0.0kg</h2><p>Left</p></div>
+					</div>
 				</div>
+
 			</div>
 			<div class="rewards">
 				<div class="reward-cont">
@@ -111,7 +118,7 @@
 						<h3>$10 Cash Voucher</h3>
 						<p>Redeem from <span>NTUC</span></p>
 					</div>
-					<div>0.0kg</div>
+					<div>1.0kg</div>
 				</div>
 				<div class="reward-cont">
 					<img src="image/svg/reward.svg" alt="present">
@@ -119,7 +126,7 @@
 						<h3>$20 Cash Voucher</h3>
 						<p>Redeem from <span>NTUC</span></p>
 					</div>
-					<div>0.6kg</div>
+					<div>2.0kg</div>
 				</div>
 				<div class="reward-cont">
 					<img src="image/svg/reward.svg" alt="present" />
@@ -127,7 +134,7 @@
 						<h3>$30 Cash Voucher</h3>
 						<p>Redeem from <span>NTUC</span></p>
 					</div>
-					<div>2.0kg</div>
+					<div>3.0kg</div>
 				</div>
 				<div class="reward-cont">
 					<img src="image/svg/reward.svg" alt="present" />
@@ -135,7 +142,7 @@
 						<h3>$40 Cash Voucher</h3>
 						<p>Redeem from <span>NTUC</span></p>
 					</div>
-					<div>3.0kg</div>
+					<div>4.0kg</div>
 				</div>
 				<div class="reward-cont">
 					<img src="image/svg/reward.svg" alt="present" />
@@ -143,14 +150,28 @@
 						<h3>$50 Cash Voucher</h3>
 						<p>Redeem from <span>NTUC</span></p>
 					</div>
-					<div>4.0kg</div>
+					<div>5.0kg</div>
 				</div>
 			</div>
         </div>
         <div id="location" class="page">
             <h1>Nearby <span class="gr">Bins</span></h1>
             <div id="map"></div>
-        </div>
+		</div>
+		<div id="redeem" class="page">
+			<img src="image/svg/reward.svg" alt="present"/>
+			<h1 class="gr">Redeem Voucher</h1>
+			<p>Do you want to redeem your NTUC Voucher?</p>
+			<div class="btn-cont">
+				<input type="button" value="Redeem"/>
+				<input type="button" value="Cancel"/>
+			</div>
+		</div>
+		<div id="deposit" class="page">
+			<p>You have deposited <h1 class="gr">0.1KG</h1> at Foodgle Hub</p>
+			<br><br>
+			<p>Thank you for your contribution!</p>
+		</div>
     </div>
     <div class="nav">
         <ul>

@@ -169,7 +169,6 @@ const map = {
     _g_marker : [],
     image : {},
     init(){
-
         this.image = [{
             url : "image/svg/marker.svg",
             size : new google.maps.Size(33,46),
@@ -183,6 +182,7 @@ const map = {
         }];
 
         if(!this.g_map){
+          // alert("ETEST");
             this.g_map = new google.maps.Map($("#map")[0], {
                 zoom : this.scale,
                 center : this.start || {lat:0,lng:0},

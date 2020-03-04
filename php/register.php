@@ -33,8 +33,8 @@ else{
     
     $data = null;
     $user->createUser($name, $email, password_hash($pass, PASSWORD_DEFAULT));
+    $user->createUserData($user->lastInsertId()); 
     $data = $user->get($email);
-    unset($data["email"]);
     unset($data["pass"]);
     echo json_encode($data);
     $data = null;

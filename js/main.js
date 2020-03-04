@@ -30,7 +30,30 @@ $(".nav a").click(function(e){
 swipe($("#onboard.page"));
 
 $(".nav #qr-img").change(scanner);
+$(".reward-cont").click(function(){
+    $(this).addClass("to_redeem");
+    $("#redeem")
+    .addClass("up_in active infront")
+    .on("animationend", ()=>$('#redeem').removeClass("up_in"));
+});
+$("#redeem input").click(function(){
+    $("#redeem")
+    .removeClass("infront")
+    .addClass("up_out")
+    .on("animationend", ()=>$('#redeem').removeClass("up_out active"));
 
+    if($(this).val() === "Cancel"){
+        $('.to_redeem').removeClass("to_redeem");
+    }
+    else{
+        const to_redeem = $(".to_redeem")
+        .removeClass("to_redeem");
+
+        to_redeem.children("div.info + div").text("Redeemed");
+
+        
+    }
+});
 $("#login.page form, #register.page form").submit(function(e){
     e.preventDefault();
     fetch(this.action, {
@@ -42,8 +65,13 @@ $("#login.page form, #register.page form").submit(function(e){
             alert(e["err"]);
         }
         else{
-            page._store.set("user_data", JSON.stringify(e));
-            page.userLogin(e);
+            const data = {}; // send to storage
+            data["name"] = e.name;
+            data["id"] = e.id;
+            data["email"] = e.email;
+            page._store.set("user_data", JSON.stringify(data));
+            page.userLogin(data);
+            page.setData(e);
             page
             .view($(this).data("from"), $(this).data("to"), $(this).data("transition"))
             .then(e=>{

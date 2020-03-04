@@ -26,7 +26,6 @@ else{
         return;
     }
     if(password_verify($pass, $data["pass"])){
-        unset($data["email"]);
         unset($data["pass"]);
         echo json_encode($data);
         $data = null;
