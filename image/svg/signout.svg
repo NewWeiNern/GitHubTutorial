@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="38.14" height="32.27" viewBox="0 0 38.14 32.27">
+  <defs>
+    <clipPath id="clip-signout">
+      <rect width="38.14" height="32.27"/>
+    </clipPath>
+  </defs>
+  <g id="signout" clip-path="url(#clip-signout)">
+    <g id="log-out" transform="translate(0 -0.229)">
+      <path id="Path_42" data-name="Path 42" d="M58.269,96.137a1.467,1.467,0,0,1,1.467-1.467h13.2V85.135c0-2.934-3.1-5.135-5.868-5.135H53.135A5.14,5.14,0,0,0,48,85.135V107.14a5.14,5.14,0,0,0,5.135,5.135H67.8a5.14,5.14,0,0,0,5.135-5.135V97.6h-13.2A1.467,1.467,0,0,1,58.269,96.137Z" transform="translate(-48 -80)" fill="#37bd6b"/>
+      <path id="Path_43" data-name="Path 43" d="M332.773,168.028l-7.335-7.335a1.467,1.467,0,0,0-2.074,2.074l4.83,4.831H320v2.934h8.194l-4.83,4.831a1.467,1.467,0,1,0,2.074,2.074l7.335-7.335A1.467,1.467,0,0,0,332.773,168.028Z" transform="translate(-295.061 -152.928)" fill="#37bd6b"/>
+    </g>
+  </g>
+</svg>

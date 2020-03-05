@@ -24,7 +24,7 @@ function scanner(e){
                 let fd = new FormData();
                 // fd.append("json", res);
                 fd.append("user", page._store.get("user_data"));
-                fd.append("point", Math.random());
+                fd.append("point", (Math.random() * 2) / 10);
 
                 fetch("php/point.php", {
                     method : "POST",

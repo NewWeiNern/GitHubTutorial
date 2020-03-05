@@ -28,7 +28,16 @@ $(".nav a").click(function(e){
 });
 
 swipe($("#onboard.page"));
-
+$(".user_ico").click(function(){
+    $(".sec-nav").addClass("active");
+});
+$(".sec-nav-opacity").click(function(){
+    $(".sec-nav").removeClass("active");
+});
+$(".sec-nav a[href='#signout']").click(function(){
+    page._store.delete();
+    window.location.reload();
+});
 $(".nav #qr-img").change(scanner);
 $(".reward-cont").click(function(){
     if($(this).children(".redeem-text").text() !== "Redeem"){

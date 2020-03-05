@@ -62,11 +62,11 @@ class PageController{
         const current = $("#profile.page .total_weighed .cur h2");
         const next_reward = $("#profile.page .nxt_reward h2");
         const reward_bar = $("#profile.page img[alt='bg_empty']");
-
+        const height = reward_bar[0].height;
         name.text(data.name);
         current.text((parseFloat(data.next_reward) - parseFloat(data.current_kg)).toFixed(1) + "kg");
         next_reward.text(parseFloat(data.next_reward).toFixed(1) + "kg");
-        $("#profile.page img[alt='bg_total']").css("clip", "rect(" + (reward_bar.height() - (data.current_kg / data.next_reward) * reward_bar.height()) + "px, auto, auto, auto)");
+        $("#profile.page img[alt='bg_total']").css("clip", "rect(" + (height - (data.current_kg / data.next_reward) * height) + "px, auto, auto, auto)");
         
         for(let i= 0; i < data.next_reward; i++){
 
