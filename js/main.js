@@ -31,6 +31,9 @@ swipe($("#onboard.page"));
 
 $(".nav #qr-img").change(scanner);
 $(".reward-cont").click(function(){
+    if($(this).children(".redeem-text").text() !== "Redeem"){
+        return;
+    }
     $(this).addClass("to_redeem");
     $("#redeem")
     .addClass("up_in active infront")

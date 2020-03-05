@@ -24,6 +24,20 @@ class User extends DB{
         $stmt = $this->prepare("INSERT INTO $this->table(name, email, pass) VALUES (?,?,?)");
         $stmt->execute([$name, $email, $pass]);
     }
+    public function addPoint($weight, $user){
+        $id = $user->id;
+        $data = $this->get($user->email);
+        $total = $data["current_kg"] + $weight;
+        $data["total_kg"]+= $weight;
+        if($data["next_reward"] < $total){
+            $data["current_kg"]-= $data["next_reward"];
+            $data["next_reward"]+= 1;
+        }
+
+        $stmt = $this->prepare("UPDATE tb_app_data SET current_kg=?, next_reward=?, total_kg=? WHERE user_id=?");
+        $stmt->execute([$total, $data["next_reward"], $data["total_kg"], $id]);
+        $stmt = null;
+    }
 }
 
 ?>
