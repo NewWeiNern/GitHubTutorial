@@ -3,6 +3,7 @@ function scanner(e){
     const reader = new FileReader();
     const $this = this;
     
+    console.log(file);
     reader.onloadend = function(e){
         qrcode.decode(reader.result);
     }
@@ -21,10 +22,13 @@ function scanner(e){
             }
 
             if(run){
+                res = JSON.parse(res);
                 let fd = new FormData();
-                // fd.append("json", res);
+                let point = Math.random();
+                let loc = res.name;
+
                 fd.append("user", page._store.get("user_data"));
-                fd.append("point", (Math.random() * 2) / 10);
+                fd.append("point", point);
 
                 fetch("php/point.php", {
                     method : "POST",
@@ -34,6 +38,9 @@ function scanner(e){
                 .then(e=>{
                     const data = e;
                     const active = $(".page.active");
+                    const deposit = $("#deposit.page");
+                    deposit.children(".weight").text(parseFloat(point.toFixed(2)) + "kg");
+                    deposit.children(".location").text(res.name);
                     page.view("#" + active.attr("id"), "#deposit", "left").then(e=>{
                         page.setData(data);
                         setTimeout(()=>{

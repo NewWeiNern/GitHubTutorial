@@ -138,6 +138,7 @@ input[type="text"], input[type="email"], input[type="password"]{
     height: calc(100vh / 4);
     background-color: white;
     z-index: 9999999;
+    transform: translateZ(9999999px);
     padding: 5vh 10vw;
 }
 .sec-nav.active{
